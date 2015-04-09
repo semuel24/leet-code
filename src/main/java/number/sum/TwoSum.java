@@ -6,7 +6,7 @@ import java.util.UUID;
 public class TwoSum {
 
 	public static void main(String[] args) {
-		System.out.println(UUID.randomUUID());
+//		System.out.println(UUID.randomUUID());
 	}
 
 	public static int[] twoSum(int[] numbers, int target) {
