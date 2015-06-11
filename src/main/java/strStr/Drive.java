@@ -6,40 +6,40 @@ public class Drive {
 		String haystack = "";
 		String needle = "";
 		int start = strStr(haystack, needle);
-		System.out.println(haystack.substring(start, start + needle.length()));
+		if(start != -1) {
+			System.out.println(haystack.substring(start, start + needle.length()));
+		} else {
+			System.out.println("Didn't find the target !");
+		}
+		
 	}
-
-	public static int strStr(String haystack, String needle) {
-		
-		
-		if (haystack == null || needle == null) {
+	
+	public static int strStr(String source, String target) {
+		if(source == null || target == null) {
 			return -1;
 		}
 		
-		if("".equalsIgnoreCase(needle)) {
+		if(source.length() < target.length()) {
+			return -1;
+		}
+		
+		if(target.equalsIgnoreCase("")) {
 			return 0;
 		}
-
-		int i = 0;
-		while (i < haystack.length()) {
-			int tmpi = i;
-			int j = 0;
-			while (j < needle.length()) {
-				if (tmpi == haystack.length()) {
-					return -1;
-				} else if (haystack.charAt(tmpi) == needle.charAt(j)) {
-					if (j == needle.length() - 1) {
-						return i;
-					} else {
-						tmpi++;
-						j++;
-					}
+		
+		for(int i = 0; i < source.length() - target.length() + 1; i++) {
+			for(int j = 0; j < target.length(); j++) {
+				if(source.charAt(i+j) == target.charAt(j) && j == target.length() - 1) {
+					return i;
+				}
+				
+				if(source.charAt(i+j) == target.charAt(j)) {
+					continue;
 				} else {
 					break;
 				}
 			}
-			i++;
 		}
-		return -1;
-	}
+        return -1;
+    }
 }

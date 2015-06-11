@@ -18,25 +18,25 @@ public class Solution {
 		int m = 3;
 		int n = 2;
 		s.merge(A, m, B, n);
-		s.print(A, m+n);
+//		s.print(A, m+n);
 	}
 	
 	public void merge(int A[], int m, int B[], int n) {
         
-        Arrays.sort(A, 0, m);
-        Arrays.sort(B, 0, n);
+//        Arrays.sort(A, 0, m);
+//        Arrays.sort(B, 0, n);
         pushElements(A, m);
         int aStartIndex = A.length-m;
         doMerge(A, B, aStartIndex, m, n);
     }
 	
-	private void print(int [] _A, int _l) {
-		System.out.print("printing:");
-		for(int i=0; i<_l; i++) {
-			System.out.print(_A[i] + " ");
-		}
-		System.out.print("");
-	}
+//	private void print(int [] _A, int _l) {
+//		System.out.print("printing:");
+//		for(int i=0; i<_l; i++) {
+//			System.out.print(_A[i] + " ");
+//		}
+//		System.out.print("");
+//	}
 	
 	/**
 	 * push back elements in given array

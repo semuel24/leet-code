@@ -15,7 +15,7 @@ public class Solution {
 		reverse(nums, 0, nums.length-1);
 		reverse(nums, 0, k-1);
 		reverse(nums, k, nums.length-1);
-		print(nums);
+//		print(nums);
     }
 	
 	private void reverse(int [] nums, int startIndex, int endIndex) {
@@ -28,10 +28,10 @@ public class Solution {
 		}
 	}
 	
-	private void print(int [] nums) {
-		for(int i:nums) {
-			System.out.print(i + "|");
-		}
-		System.out.println("");
-	}
+//	private void print(int [] nums) {
+//		for(int i:nums) {
+//			System.out.print(i + "|");
+//		}
+//		System.out.println("");
+//	}
 }

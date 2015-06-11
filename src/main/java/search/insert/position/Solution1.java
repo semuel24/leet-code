@@ -8,10 +8,10 @@ package search.insert.position;
 You may assume no duplicates in the array.
 
 Here are few examples.
-[1,3,5,6], 5 → 2
-[1,3,5,6], 2 → 1
-[1,3,5,6], 7 → 4
-[1,3,5,6], 0 → 0
+[1,3,5,6], 5 ��� 2
+[1,3,5,6], 2 ��� 1
+[1,3,5,6], 7 ��� 4
+[1,3,5,6], 0 ��� 0
  */
 public class Solution1 {
 	
@@ -25,16 +25,25 @@ public class Solution1 {
 	}
 	
 	public int searchInsert(int[] A, int target) {
-		if(A == null || A.length == 0) {
-			return 0;
+		int start = 0;
+		int end = A.length -1;
+		while(start + 1 < end) {
+			int mid = start + (end - start)/2;
+			if(A[mid] == target) {
+				end = mid;
+			} else if(A[mid] < target) {
+				start = mid;
+			} else {
+				end = mid;
+			}
 		}
 		
-		for(int i=0; i<A.length; i++) {
-			if(target <= A[i]) {
-				return i;
-			}	
+		if(A[start] >= target) {
+			return start;
+		} else if(A[end] >= target) {
+			return end;
+		} else {
+			return A.length;
 		}
-		
-		return A.length;
 	}
 }
